@@ -25,13 +25,10 @@ import {
 } from '@mui/material';
 import {
   Dashboard,
-  Person,
   Logout,
-  Settings,
   AdminPanelSettings,
   Menu as MenuIcon,
   Close,
-  Home,
   Article
 } from '@mui/icons-material';
 
@@ -333,19 +330,6 @@ const Navbar = () => {
                     {user?.email}
                   </Typography>
                 </Box>
-                <MenuItem onClick={() => handleNavigation('/dashboard')}>
-                  <ListItemIcon>
-                    <Person fontSize="small" />
-                  </ListItemIcon>
-                  <ListItemText>Profile</ListItemText>
-                </MenuItem>
-                <MenuItem onClick={() => handleNavigation('/settings')}>
-                  <ListItemIcon>
-                    <Settings fontSize="small" />
-                  </ListItemIcon>
-                  <ListItemText>Settings</ListItemText>
-                </MenuItem>
-                <Divider sx={{ my: 1 }} />
                 <MenuItem onClick={handleLogout}>
                   <ListItemIcon>
                     <Logout fontSize="small" />
