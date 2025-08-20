@@ -1,0 +1,1 @@
+// roleAuth.js placeholder
