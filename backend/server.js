@@ -46,8 +46,6 @@
 
 
 
-
-
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -65,6 +63,7 @@ app.use(
 );
 
 app.options('*', cors());
+
 app.use(express.json());
 
 mongoose.connect(process.env.MONGODB_URI)
@@ -75,8 +74,9 @@ app.get("/", (req, res) => {
   res.send("Backend is running successfully!");
 });
 
-app.use('/api/auth', require('./routes/auth'));
-app.use('/api/content', require('./routes/content'));
+// Fixed: Added .js extensions to route files
+app.use('/api/auth', require('./routes/auth.js'));
+app.use('/api/content', require('./routes/content.js'));
 
 app.get('/api/health', (req, res) => {
   res.json({ status: 'Server is running', timestamp: new Date().toISOString() });
