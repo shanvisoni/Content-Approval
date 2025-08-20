@@ -1,1 +1,0 @@
-// SubmitContent.js placeholder
